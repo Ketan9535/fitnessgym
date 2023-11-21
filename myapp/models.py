@@ -124,7 +124,6 @@ class Plan(models.Model):
 
     def __str__(self):
         return self.name
-    
 
 class GymBooking(models.Model):
     booking_for=models.CharField(max_length=10)
@@ -132,6 +131,14 @@ class GymBooking(models.Model):
     email=models.EmailField(max_length=50)
     plan = models.CharField(max_length=50)
     joindate = models.DateField()
+
+
+class GymTrainer(models.model):
+    name=models.CharField(max_length=10)
+    address=models.CharField(max_length=30)
+    contact=models.CharField(max_length=10)
+    plan_type=models.CharField(max_length=30)
+       
 
 
 

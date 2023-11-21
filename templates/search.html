@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block body %}
+
+
+
+
+
+
+
+<h1 class=" container mx-auto mt-5" style="font-family: Verdana, Geneva, Tahoma, sans-serif;",align="center"> Results </h1>
+
+<div class="col-9 mx-auto mb-5">
+    <div class="row">
+    
+      {% for i in x %}
+      <div class="col-sm-4">
+        <div class="card my-4 border border-info shadow-lg" >
+       
+          <div class="card-body border-primary">
+            <img src="{{i.img.url}}" class="card-img-top " alt="" width="500" height="400">
+            <div class="card-body">
+              <h5 class="card-title">{{i.title}}</h5>
+              <p class="card-text">{{i.detail}}</p>
+            
+            <td>
+              <a href="#" class="btn btn-success "> Book</a>
+            </td>
+            <td>
+              <a href="{% url 'home' %} " class="btn btn-warning "> Back</a>
+            </td>
+              
+  
+          </div>
+  
+        </div>
+  
+      </div>
+      {% endfor %}
+  
+    </div>
+  </div>
+
+{% endblock body %}

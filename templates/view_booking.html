@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<div class="container" style="margin-top: 60px;">
+    <h3 class="text-center text-primary font-weight-bold">View Plan</h3>
+    <table id="example" class="table table-hover display">
+        <thead>
+        
+        
+            <tr>
+                <th>booking_User</th>
+                <th>contact</th>
+                <th>email</th>
+                <th>plan</th>
+                <th>joindate</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in booking %}
+            <tr>
+                
+                <td>{{i.booking_for}}</td>
+                <td>{{i.contact}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.plan}}</td>
+                <td>{{i.joindate}}</td>
+                <form action="" method="POST">
+                <td>
+                    
+                    <a class="btn btn-danger" href="{% url 'delete_booking' i.id %}" onclick="return confirm('Are You Sure?')">Delete</a></td>
+                    
+            </form>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
+{% block css %}
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+color: white;
+text-align: center;
+}
+{% endblock css %}
+{% block footer %}
+
+{% endblock footer %}

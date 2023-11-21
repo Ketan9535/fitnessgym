@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<style>
+  body{
+    background-color:aliceblue;
+  }
+</style>
+   
+<br><br><br>
+
+
+
+<div class="container card shadow-lg mt-5 card p-4 col-3" style="background-color:aliceblue;" >
+    <form method="POST" action="">
+        <h4> <b> Login </b></h4><hr>
+        {% csrf_token %}
+        {% if messages %}
+        {{message.tags}}
+      <div class="alert alert-primary" role="alert">
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+        </div>
+        {% endif %}
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">UserName</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="username">
+          <div id="emailHelp" class="form-text">Enter Your UserName As It Is</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+        </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="reset" class="btn btn-danger">clear</button>
+      </form>
+</div>
+
+
+<br><br><br><br><br><br>
+
+
+{% endblock body %}
+
+{% block css %}
+
+
+
+
+
+
+
+{% endblock css %}

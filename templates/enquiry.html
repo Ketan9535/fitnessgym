@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{% endblock title %}
+
+
+{% block body %}
+<main>
+    <section class="container-fluied bg-info p-5 mb-5">
+        <h1 class="text-center mb-4 section-heading border-bottom pb-2">Enquiry Form</h1>
+ 
+
+        <div class="row mt-5">
+            <div class="col-sm-4 text-center">
+                <img src="{% static 'images/5.jpg' %}" width="400px" height="500px" class="img-responsive" alt="">
+
+
+            </div>
+            <div class="col-sm-8 text-center mt-5">
+            <form method="post" action="{% url 'enquiry' %}">
+                {% csrf_token %}
+                <table class="table table-bordered">
+                    {{form.as_table}}
+                   
+                        <td collapse="2">
+                            <input type="submit"class=" btn btn-primary"/>
+                        </td>
+                    </tr>    
+                </table>
+            </form>
+           
+        </div>
+    </section>
+</main>
+
+{% endblock body %}
+
+
+{% block js %}
+{% endblock js %}

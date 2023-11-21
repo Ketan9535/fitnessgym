@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<style>
+    body{
+        background-color:aliceblue;
+    }
+    header{
+        color: rgb(255, 0, 0);
+    }
+</style>
+
+<div class="container-fluied bg-info p-5 mb-5">
+    <h2 class="text-center text-primary font-weight-bold mt-5">About Us</h2>
+    <div class="row mt-5">
+        <div class="col-sm-4 text-center">
+            <img src="{% static 'images/5.jpg' %}" width="400px" height="500px" class="img-responsive" alt="">
+        </div>
+        <div class="col-sm-8 text-center mt-5">
+            <b> Friends<br><p class="text-center justify"></p>
+                About us
+Fit & Fine Gym Fitness Institute was started more than a decade of educating people in fitness. Every year 1000+ students pass out of the institute.Fit & Fine Gym Fitness Institute offers the most exciting and up-to-date curriculum as well as ongoing training in all aspects of the fitness industry.
+
+Fit & Fine Gym Fitness Institute is the only Advanced program, which offers you low-cost tuition, fast test results and complete career development. Becoming a Fit & Fine Gym Fitness Institute certified  is your foundation for success. It offers you complete approach to fitness, wellness and business skills. Make an investment in yourself and become a Fit & Fine Gym Fitness Institute certified people</b>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block css %}
+
+{% endblock %}
+{% block footer %}
+<footer id="footer" class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <p class="text-white">Copyright @2020 All rights reserved | Made With <i class="fa fa-heart"></i>
+                    by ketan kathole</p>
+            </div>
+            <div class="col-sm-6">
+                <ul class="social-icons">
+                    <li><a href="https://www.facebook.com"><i class="Privacy"></i></a></li>
+                    <li><a href="https://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="https://www.google.com"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="https://www.youtube.com"><i class="fa fa-youtube"></i></a></li>
+                    <li><a href="https://www.github.com"><i class="fa fa-github"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endblock footer %}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<div class="container my-4" style="margin-top: 60px;">
+    <h3 class="text-center text-primary font-weight-bold">View Enquiry</h3>
+    <table id="example" class="table table-hover display">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Detail</th>
+                <th>send_time</th>
+                
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in enq %}
+            <tr>
+                <td>{{i.full_name}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.detail}}</td>
+                <td>{{i.send_time}}</td>
+                
+                <form action="" method="POST">
+
+                <td>
+                    <a class="btn btn-warning" href="{% url 'update_enquiry' i.id %}" onclick="return confirm('Are You Sure?')">Update</a>
+                    <a class="btn btn-danger" href="{% url 'deleteenquiry' i.id %}" onclick="return confirm('Are You Sure?')">Delete</a></td>
+            </form>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
+{% block css %}
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+color: white;
+text-align: center;
+}
+{% endblock %}

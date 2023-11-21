@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+<head>
+  <link rel="stylesheet" href="{% static 'css/newdemo.css'%}">
+</head>
+
+{% block title %}
+<title>Home</title>
+{% endblock title %}
+
+{% block css %}
+
+
+
+{% endblock css %}
+
+{% block body %}
+
+<!-- message block -->
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+  <div class="carousel-inner">
+    {% for banner in banners %}
+    <div class="carousel-item active">
+      <img src="{% static 'images/4.jpg' %}" class="d-block w-100" alt="..." width="400px" height="500px">
+    </div>
+    {% endfor %}
+    <div class="carousel-item">
+      <img src="{% static 'images/5.jpg' %}" class="d-block w-100" alt="..." width="400px" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/3.jpg' %}" class="d-block w-100" alt="..." width="400px" height="500px">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/9.jpg' %}" class="d-block w-100" alt="..." width="400px" height="500px">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!--Services
+
+<section class="container my-4">
+  <h1 class="text-center mb-4 section-heading">Services</h1>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <img src="" class="card-img-top" alt="">
+        <div class="card-body">
+          <h3 class="card-title">Cardio</h3>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</section>
+-->
+<section class="container-fluied bg-info p-4 mb-6">
+  <h1 class="text-center mb-4 section-heading">Services</h1>
+  <h3 class="text-center mb-4 section-heading">DYNAMIC MOVEMENT TRAINING (DMT)</h3>
+  
+
+  <div class="row">
+    {% for service in services %}
+  <div class="col-md-4">
+<div class="card" style="width: 23rem;">
+  <img src="{{service.img.url}}" class="card-img-top" alt="..." width="300px" height="600px">
+  <div class="card-body">
+    <h5 class="card-title">{{service.title}}</h5>
+    <p class="card-text">{{service.detail}}</p>
+    <a href="#" class="btn btn-primary">Back</a>
+  </div>
+  </div>
+  </div>
+  {% endfor %}
+  </div>
+
+
+</section>
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+{% endblock body %}
+
+{% block js %}
+{% endblock js %}

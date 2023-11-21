@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<style>
+  #fixe{
+    background:url('{% static "images/4.jpg"%}');
+    background-size: cover;
+    background-position:start;
+  }
+</style>
+
+
+{% endblock css %}
+
+
+{% block body %}
+
+<div class="container card rounded-lg col-6 mt-5 card mx-auto p-4 shadow-lg">
+  
+<h3 class="mb-3"> <b> Register Form </b></h3><hr>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {% if messages %}
+        {{message.tags}}
+      <div class="alert alert-primary" role="alert">
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+        </div>
+        {% endif %}
+
+    {{forms.as_table}}
+    <input class="btn btn-success mt-3" type="submit" name="submit" id="" value="submit" >
+    <input class="btn btn-danger mt-3" type="reset" name="clear" id="" value="clear" >
+
+
+    </form>
+  </div>
+    
+<br><br>
+
+
+
+{% endblock body %}

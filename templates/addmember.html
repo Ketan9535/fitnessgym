@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Add Member Form </title>
+{% endblock title %}
+
+
+{% block css %}
+{% endblock css %}
+
+{% block body %}
+<style>
+    body{
+        background-image: image-set('images\4.jpg');
+    }
+</style>
+
+<div class="container bg-secondary p-3 text-center mt-4 ">
+    <h2>Add Member</h2>
+</div>
+    <div class="container p-5 mt-3 w-75 shadow">
+        <form method="POST" enctype="multipart/form-data" action="{% url 'addmember' %}">
+            {% csrf_token %}
+            {{forms}}
+           
+                <!-- <label for="title">Enter The Image Title:</label>
+                <input type="text" name="title" id="title" class="form-control">
+
+        
+    
+                <label for="desc">Enter The Image Description:</label>
+                 <textarea name="desc" id="desc" cols="30" rows="10" class="form-control"></textarea>-->
+                 <button type="submit" class="btn btn-danger">Add</button> 
+        </form>
+        </div>
+
+{% endblock body %}
+
+{% block js %}
+{% endblock js %}
